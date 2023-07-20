@@ -22,11 +22,11 @@
     }
   }
 
-  const handleGoogleSignin = async () => {
-    console.log('handleGoogleSignin');
+  const handleFacebookSignin = async () => {
+    console.log('handleFacebookSignin');
     try {
       loading.value = true
-      const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' })
+      const { error } = await supabase.auth.signInWithOAuth({ provider: 'facebook' })
       if (error) throw error
     } catch (error) {
       notifyStore.notify(error, NotificationType.Error);
@@ -63,11 +63,11 @@
           class="w-full py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">Sign in</button>
       </form>
       <p class="text-center">or</p>
-      <button @click="handleGoogleSignin()"
+      <button @click="handleFacebookSignin()"
         class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700">
         <span class="flex items-center justify-center space-x-2">
-          <Icon name="fa-brands:google" class="w-5 h-5" />
-          <span>Sign in with Google</span>
+          <Icon name="fa-brands:facebook" class="w-5 h-5" />
+          <span>Sign in with Facebook</span>
         </span>
       </button>
     </div>
