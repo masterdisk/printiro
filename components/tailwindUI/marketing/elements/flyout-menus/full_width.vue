@@ -1,10 +1,51 @@
+<script setup>
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import {
+  ChartBarIcon,
+  CheckCircleIcon,
+  CursorArrowRaysIcon,
+  PhoneIcon,
+  PlayIcon,
+  ShieldCheckIcon,
+  Squares2X2Icon,
+} from '@heroicons/vue/24/outline'
+
+const solutions = [
+  {
+    name: 'Analytics',
+    description: 'Get a better understanding of where your traffic is coming from.',
+    href: '#',
+    icon: ChartBarIcon,
+  },
+  {
+    name: 'Engagement',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '#',
+    icon: CursorArrowRaysIcon,
+  },
+  { name: 'Security', description: 'Your customers\' data will be safe and secure.', href: '#', icon: ShieldCheckIcon },
+  {
+    name: 'Integrations',
+    description: 'Connect with third-party tools that you\'re already using.',
+    href: '#',
+    icon: Squares2X2Icon,
+  },
+]
+const callsToAction = [
+  { name: 'Watch Demo', href: '#', icon: PlayIcon },
+  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
+  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+]
+</script>
+
 <template>
-  <Popover class="relative z-0" v-slot="{ open }">
+  <Popover v-slot="{ open }" class="relative z-0">
     <div class="relative z-10 bg-white shadow">
       <div class="mx-auto flex max-w-7xl p-6 lg:px-8">
-        <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-500', 'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2']">
+        <PopoverButton class="group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" :class="[open ? 'text-gray-900' : 'text-gray-500']">
           <span>Solutions</span>
-          <ChevronDownIcon :class="[open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500']" aria-hidden="true" />
+          <ChevronDownIcon class="ml-2 h-5 w-5 group-hover:text-gray-500" :class="[open ? 'text-gray-600' : 'text-gray-400']" aria-hidden="true" />
         </PopoverButton>
       </div>
     </div>
@@ -48,44 +89,3 @@
     </transition>
   </Popover>
 </template>
-
-<script setup>
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
-import {
-  ChartBarIcon,
-  CheckCircleIcon,
-  CursorArrowRaysIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-} from '@heroicons/vue/24/outline'
-
-const solutions = [
-  {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
-    icon: ChartBarIcon,
-  },
-  {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: CursorArrowRaysIcon,
-  },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-  {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: Squares2X2Icon,
-  },
-]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-</script>

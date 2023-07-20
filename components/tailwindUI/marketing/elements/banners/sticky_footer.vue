@@ -1,3 +1,7 @@
+<script setup>
+import { MegaphoneIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+</script>
+
 <template>
   <!--
     Make sure you add some bottom padding to pages that include a sticky banner like this to prevent
@@ -30,7 +34,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { MegaphoneIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-</script>

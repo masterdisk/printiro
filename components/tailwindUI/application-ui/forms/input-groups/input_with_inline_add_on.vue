@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -19,7 +19,7 @@
       <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
         <span class="text-gray-500 sm:text-sm">http://</span>
       </div>
-      <input type="text" name="company-website" id="company-website" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:pl-14 sm:text-sm" placeholder="www.example.com" />
+      <input id="company-website" type="text" name="company-website" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:pl-14 sm:text-sm" placeholder="www.example.com">
     </div>
   </div>
 </template>

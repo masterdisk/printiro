@@ -1,3 +1,7 @@
+<script setup>
+import { ChatBubbleBottomCenterTextIcon, PaperClipIcon, PencilIcon, TrashIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <div class="relative">
     <div class="absolute inset-0 flex items-center" aria-hidden="true">
@@ -25,7 +29,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ChatBubbleBottomCenterTextIcon, PaperClipIcon, PencilIcon, TrashIcon } from '@heroicons/vue/20/solid'
-</script>

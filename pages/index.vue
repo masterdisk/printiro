@@ -5,11 +5,6 @@ import Dark_panel_with_app_screenshot
   from '~/components/tailwindUI/marketing/sections/cta-sections/dark_panel_with_app_screenshot.vue'
 import Split_with_code_example from '~/components/tailwindUI/marketing/sections/heroes/split_with_code_example.vue'
 
-const user = useSupabaseUser()
-watchEffect(() => {
-  if (user.value)
-    navigateTo('/', { replace: true })
-})
 definePageMeta({ layout: 'landing-page' })
 </script>
 

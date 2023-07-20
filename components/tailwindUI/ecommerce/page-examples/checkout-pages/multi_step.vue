@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -12,12 +12,30 @@
   }
   ```
 -->
+<script setup>
+import { UserIcon } from '@heroicons/vue/24/outline'
+
+const products = [
+  {
+    id: 1,
+    name: 'Women\'s Basic Tee',
+    href: '#',
+    price: '$32.00',
+    color: 'Gray',
+    size: 'S',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/checkout-page-05-product-01.jpg',
+    imageAlt: 'Front of women\'s basic tee in heather gray.',
+  },
+  // More products...
+]
+</script>
+
 <template>
   <div class="bg-white">
     <header class="flex items-center justify-between px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
       <a href="#">
         <span class="sr-only">Your Company</span>
-        <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="" class="h-8 w-auto" />
+        <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="" class="h-8 w-auto">
       </a>
       <div class="hidden sm:flex sm:items-center sm:space-x-8">
         <a href="#" class="text-sm font-medium text-gray-700">Contact support</a>
@@ -29,30 +47,44 @@
     </header>
 
     <main class="mx-auto max-w-7xl px-4 pt-4 pb-16 sm:px-6 sm:pt-8 sm:pb-24 lg:px-8 xl:px-2 xl:pt-14">
-      <h1 class="sr-only">Checkout</h1>
+      <h1 class="sr-only">
+        Checkout
+      </h1>
 
       <div class="mx-auto grid max-w-lg grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
         <div class="mx-auto w-full max-w-lg">
-          <h2 class="sr-only">Order summary</h2>
+          <h2 class="sr-only">
+            Order summary
+          </h2>
 
           <div class="flow-root">
             <ul role="list" class="-my-6 divide-y divide-gray-200">
               <li v-for="product in products" :key="product.id" class="flex space-x-6 py-6">
-                <img :src="product.imageSrc" :alt="product.imageAlt" class="h-24 w-24 flex-none rounded-md bg-gray-100 object-cover object-center" />
+                <img :src="product.imageSrc" :alt="product.imageAlt" class="h-24 w-24 flex-none rounded-md bg-gray-100 object-cover object-center">
                 <div class="flex-auto">
                   <div class="space-y-1 sm:flex sm:items-start sm:justify-between sm:space-x-6">
                     <div class="flex-auto space-y-1 text-sm font-medium">
                       <h3 class="text-gray-900">
                         <a :href="product.href">{{ product.name }}</a>
                       </h3>
-                      <p class="text-gray-900">{{ product.price }}</p>
-                      <p class="hidden text-gray-500 sm:block">{{ product.color }}</p>
-                      <p class="hidden text-gray-500 sm:block">{{ product.size }}</p>
+                      <p class="text-gray-900">
+                        {{ product.price }}
+                      </p>
+                      <p class="hidden text-gray-500 sm:block">
+                        {{ product.color }}
+                      </p>
+                      <p class="hidden text-gray-500 sm:block">
+                        {{ product.size }}
+                      </p>
                     </div>
                     <div class="flex flex-none space-x-4">
-                      <button type="button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Edit</button>
+                      <button type="button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                        Edit
+                      </button>
                       <div class="flex border-l border-gray-300 pl-4">
-                        <button type="button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                        <button type="button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                          Remove
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -64,19 +96,29 @@
           <dl class="mt-10 space-y-6 text-sm font-medium text-gray-500">
             <div class="flex justify-between">
               <dt>Subtotal</dt>
-              <dd class="text-gray-900">$104.00</dd>
+              <dd class="text-gray-900">
+                $104.00
+              </dd>
             </div>
             <div class="flex justify-between">
               <dt>Taxes</dt>
-              <dd class="text-gray-900">$8.32</dd>
+              <dd class="text-gray-900">
+                $8.32
+              </dd>
             </div>
             <div class="flex justify-between">
               <dt>Shipping</dt>
-              <dd class="text-gray-900">$14.00</dd>
+              <dd class="text-gray-900">
+                $14.00
+              </dd>
             </div>
             <div class="flex justify-between border-t border-gray-200 pt-6 text-gray-900">
-              <dt class="text-base">Total</dt>
-              <dd class="text-base">$126.32</dd>
+              <dt class="text-base">
+                Total
+              </dt>
+              <dd class="text-base">
+                $126.32
+              </dd>
             </div>
           </dl>
         </div>
@@ -99,58 +141,52 @@
           </div>
 
           <form class="mt-6">
-            <h2 class="text-lg font-medium text-gray-900">Contact information</h2>
+            <h2 class="text-lg font-medium text-gray-900">
+              Contact information
+            </h2>
 
             <div class="mt-6">
               <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
               <div class="mt-1">
-                <input type="email" id="email-address" name="email-address" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <input id="email-address" type="email" name="email-address" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
               </div>
             </div>
 
             <div class="mt-6">
               <label for="phone" class="block text-sm font-medium text-gray-700">Phone number</label>
               <div class="mt-1">
-                <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <input id="phone" type="text" name="phone" autocomplete="tel" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
               </div>
             </div>
 
             <div class="mt-6 flex space-x-2">
               <div class="flex h-5 items-center">
-                <input id="terms" name="terms" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input id="terms" name="terms" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
               </div>
               <label for="terms" class="text-sm text-gray-500">I have read the terms and conditions and agree to the sale of my personal information to the highest bidder.</label>
             </div>
 
-            <button type="submit" disabled="" class="mt-6 w-full rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500">Continue</button>
+            <button type="submit" disabled="" class="mt-6 w-full rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500">
+              Continue
+            </button>
           </form>
 
           <div class="mt-10 divide-y divide-gray-200 border-t border-b border-gray-200">
-            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">Payment details</button>
-            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">Shipping address</button>
-            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">Billing address</button>
-            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">Review</button>
+            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">
+              Payment details
+            </button>
+            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">
+              Shipping address
+            </button>
+            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">
+              Billing address
+            </button>
+            <button type="button" disabled="" class="w-full cursor-auto py-6 text-left text-lg font-medium text-gray-500">
+              Review
+            </button>
           </div>
         </div>
       </div>
     </main>
   </div>
 </template>
-
-<script setup>
-import { UserIcon } from '@heroicons/vue/24/outline'
-
-const products = [
-  {
-    id: 1,
-    name: "Women's Basic Tee",
-    href: '#',
-    price: '$32.00',
-    color: 'Gray',
-    size: 'S',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/checkout-page-05-product-01.jpg',
-    imageAlt: "Front of women's basic tee in heather gray.",
-  },
-  // More products...
-]
-</script>

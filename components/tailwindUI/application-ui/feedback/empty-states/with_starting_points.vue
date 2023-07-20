@@ -1,35 +1,3 @@
-<template>
-  <div>
-    <h2 class="text-lg font-medium text-gray-900">Projects</h2>
-    <p class="mt-1 text-sm text-gray-500">You haven’t created a project yet. Get started by selecting a template or start from an empty project.</p>
-    <ul role="list" class="mt-6 grid grid-cols-1 gap-6 border-t border-b border-gray-200 py-6 sm:grid-cols-2">
-      <li v-for="(item, itemIdx) in items" :key="itemIdx" class="flow-root">
-        <div class="relative -m-2 flex items-center space-x-4 rounded-xl p-2 focus-within:ring-2 focus-within:ring-indigo-500 hover:bg-gray-50">
-          <div :class="[item.background, 'flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-lg']">
-            <component :is="item.icon" class="h-6 w-6 text-white" aria-hidden="true" />
-          </div>
-          <div>
-            <h3 class="text-sm font-medium text-gray-900">
-              <a href="#" class="focus:outline-none">
-                <span class="absolute inset-0" aria-hidden="true" />
-                <span>{{ item.title }}</span>
-                <span aria-hidden="true"> &rarr;</span>
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">{{ item.description }}</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="mt-4 flex">
-      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-        Or start from an empty project
-        <span aria-hidden="true"> &rarr;</span>
-      </a>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import {
   Bars4Icon,
@@ -79,3 +47,41 @@ const items = [
   },
 ]
 </script>
+
+<template>
+  <div>
+    <h2 class="text-lg font-medium text-gray-900">
+      Projects
+    </h2>
+    <p class="mt-1 text-sm text-gray-500">
+      You haven’t created a project yet. Get started by selecting a template or start from an empty project.
+    </p>
+    <ul role="list" class="mt-6 grid grid-cols-1 gap-6 border-t border-b border-gray-200 py-6 sm:grid-cols-2">
+      <li v-for="(item, itemIdx) in items" :key="itemIdx" class="flow-root">
+        <div class="relative -m-2 flex items-center space-x-4 rounded-xl p-2 focus-within:ring-2 focus-within:ring-indigo-500 hover:bg-gray-50">
+          <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-lg" :class="[item.background]">
+            <component :is="item.icon" class="h-6 w-6 text-white" aria-hidden="true" />
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-gray-900">
+              <a href="#" class="focus:outline-none">
+                <span class="absolute inset-0" aria-hidden="true" />
+                <span>{{ item.title }}</span>
+                <span aria-hidden="true"> &rarr;</span>
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="mt-4 flex">
+      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+        Or start from an empty project
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
+    </div>
+  </div>
+</template>

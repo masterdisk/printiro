@@ -1,33 +1,3 @@
-<template>
-  <div class="bg-white">
-    <div>
-      <h2 id="reviews-heading" class="sr-only">Reviews</h2>
-
-      <div class="space-y-10">
-        <div v-for="review in reviews" :key="review.id" class="flex flex-col sm:flex-row">
-          <div class="order-2 mt-6 sm:mt-0 sm:ml-16">
-            <h3 class="text-sm font-medium text-gray-900">{{ review.title }}</h3>
-            <p class="sr-only">{{ review.rating }} out of 5 stars</p>
-
-            <div class="mt-3 space-y-6 text-sm text-gray-600" v-html="review.content" />
-          </div>
-
-          <div class="order-1 flex items-center sm:flex-col sm:items-start">
-            <img :src="review.avatarSrc" :alt="`${review.author}.`" class="h-12 w-12 rounded-full" />
-
-            <div class="ml-4 sm:ml-0 sm:mt-4">
-              <p class="text-sm font-medium text-gray-900">{{ review.author }}</p>
-              <div class="mt-2 flex items-center">
-                <StarIcon v-for="rating in [0, 1, 2, 3, 4]" :key="rating" :class="[review.rating > rating ? 'text-gray-900' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']" aria-hidden="true" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { StarIcon } from '@heroicons/vue/20/solid'
 
@@ -67,3 +37,41 @@ const reviews = [
   },
 ]
 </script>
+
+<template>
+  <div class="bg-white">
+    <div>
+      <h2 id="reviews-heading" class="sr-only">
+        Reviews
+      </h2>
+
+      <div class="space-y-10">
+        <div v-for="review in reviews" :key="review.id" class="flex flex-col sm:flex-row">
+          <div class="order-2 mt-6 sm:mt-0 sm:ml-16">
+            <h3 class="text-sm font-medium text-gray-900">
+              {{ review.title }}
+            </h3>
+            <p class="sr-only">
+              {{ review.rating }} out of 5 stars
+            </p>
+
+            <div class="mt-3 space-y-6 text-sm text-gray-600" v-html="review.content" />
+          </div>
+
+          <div class="order-1 flex items-center sm:flex-col sm:items-start">
+            <img :src="review.avatarSrc" :alt="`${review.author}.`" class="h-12 w-12 rounded-full">
+
+            <div class="ml-4 sm:ml-0 sm:mt-4">
+              <p class="text-sm font-medium text-gray-900">
+                {{ review.author }}
+              </p>
+              <div class="mt-2 flex items-center">
+                <StarIcon v-for="rating in [0, 1, 2, 3, 4]" :key="rating" class="h-5 w-5 flex-shrink-0" :class="[review.rating > rating ? 'text-gray-900' : 'text-gray-200']" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

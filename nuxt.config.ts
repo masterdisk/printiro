@@ -2,16 +2,16 @@
 export default defineNuxtConfig({
   debug: true,
   build: {
-    transpile: ['trpc-nuxt']
+    transpile: ['trpc-nuxt'],
   },
   typescript: {
-    shim: false
+    shim: false,
   },
   modules: ['@nuxtjs/supabase', '@pinia/nuxt', '@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/devtools'],
   imports: {
     dirs: ['./stores'],
   },
-  app:{
+  app: {
     head: {
       htmlAttrs: {
         lang: 'en',
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       title: 'Nuxt 3 SAAS Boilerplate',
     },
   },
-  runtimeConfig:{
+  runtimeConfig: {
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
     stripeEndpointSecret: process.env.STRIPE_ENDPOINT_SECRET,
     subscriptionGraceDays: 3,
@@ -29,6 +29,6 @@ export default defineNuxtConfig({
     public: {
       debugMode: true,
       siteRootUrl: process.env.URL || 'http://localhost:3000', // URL env variable is provided by netlify by default
-    }
-  }
+    },
+  },
 })

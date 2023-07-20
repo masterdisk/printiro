@@ -1,3 +1,7 @@
+<script setup>
+import { MegaphoneIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+</script>
+
 <template>
   <div class="fixed inset-x-0 bottom-0 pb-2 sm:pb-5">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -26,7 +30,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { MegaphoneIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-</script>

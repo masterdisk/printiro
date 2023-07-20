@@ -1,15 +1,3 @@
-<template>
-  <ul role="list" class="divide-y divide-gray-200">
-    <li v-for="person in people" :key="person.email" class="flex py-4">
-      <img class="h-10 w-10 rounded-full" :src="person.image" alt="" />
-      <div class="ml-3">
-        <p class="text-sm font-medium text-gray-900">{{ person.name }}</p>
-        <p class="text-sm text-gray-500">{{ person.email }}</p>
-      </div>
-    </li>
-  </ul>
-</template>
-
 <script setup>
 const people = [
   {
@@ -32,3 +20,19 @@ const people = [
   },
 ]
 </script>
+
+<template>
+  <ul role="list" class="divide-y divide-gray-200">
+    <li v-for="person in people" :key="person.email" class="flex py-4">
+      <img class="h-10 w-10 rounded-full" :src="person.image" alt="">
+      <div class="ml-3">
+        <p class="text-sm font-medium text-gray-900">
+          {{ person.name }}
+        </p>
+        <p class="text-sm text-gray-500">
+          {{ person.email }}
+        </p>
+      </div>
+    </li>
+  </ul>
+</template>

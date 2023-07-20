@@ -1,3 +1,13 @@
+<script setup>
+import { CheckIcon } from '@heroicons/vue/24/solid'
+
+const steps = [
+  { id: '01', name: 'Job details', href: '#', status: 'complete' },
+  { id: '02', name: 'Application form', href: '#', status: 'current' },
+  { id: '03', name: 'Preview', href: '#', status: 'upcoming' },
+]
+</script>
+
 <template>
   <nav aria-label="Progress">
     <ol role="list" class="divide-y divide-gray-300 rounded-md border border-gray-300 md:flex md:divide-y-0">
@@ -36,13 +46,3 @@
     </ol>
   </nav>
 </template>
-
-<script setup>
-import { CheckIcon } from '@heroicons/vue/24/solid'
-
-const steps = [
-  { id: '01', name: 'Job details', href: '#', status: 'complete' },
-  { id: '02', name: 'Application form', href: '#', status: 'current' },
-  { id: '03', name: 'Preview', href: '#', status: 'upcoming' },
-]
-</script>

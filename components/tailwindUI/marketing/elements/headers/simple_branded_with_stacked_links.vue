@@ -1,3 +1,12 @@
+<script setup>
+const navigation = [
+  { name: 'Solutions', href: '#' },
+  { name: 'Pricing', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Company', href: '#' },
+]
+</script>
+
 <template>
   <header class="bg-indigo-600">
     <nav class="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Top">
@@ -5,7 +14,7 @@
         <div class="flex items-center">
           <a href="#">
             <span class="sr-only">Your Company</span>
-            <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
+            <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="">
           </a>
           <div class="ml-10 hidden space-x-8 lg:block">
             <a v-for="link in navigation" :key="link.name" :href="link.href" class="text-base font-medium text-white hover:text-indigo-50">{{ link.name }}</a>
@@ -22,12 +31,3 @@
     </nav>
   </header>
 </template>
-
-<script setup>
-const navigation = [
-  { name: 'Solutions', href: '#' },
-  { name: 'Pricing', href: '#' },
-  { name: 'Docs', href: '#' },
-  { name: 'Company', href: '#' },
-]
-</script>

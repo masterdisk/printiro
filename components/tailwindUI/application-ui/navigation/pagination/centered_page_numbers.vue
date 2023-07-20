@@ -1,3 +1,7 @@
+<script setup>
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <nav class="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0">
     <div class="-mt-px flex w-0 flex-1">
@@ -24,7 +28,3 @@
     </div>
   </nav>
 </template>
-
-<script setup>
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/vue/20/solid'
-</script>

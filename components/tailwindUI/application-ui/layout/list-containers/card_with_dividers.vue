@@ -1,3 +1,10 @@
+<script setup>
+const items = [
+  { id: 1 },
+  // More items...
+]
+</script>
+
 <template>
   <div class="overflow-hidden rounded-md bg-white shadow">
     <ul role="list" class="divide-y divide-gray-200">
@@ -7,10 +14,3 @@
     </ul>
   </div>
 </template>
-
-<script setup>
-const items = [
-  { id: 1 },
-  // More items...
-]
-</script>

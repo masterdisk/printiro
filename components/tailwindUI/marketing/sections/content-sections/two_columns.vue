@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -17,8 +17,12 @@
     <div class="mx-auto max-w-max lg:max-w-7xl">
       <div class="relative z-10 mb-8 md:mb-2 md:px-6">
         <div class="max-w-prose text-base lg:max-w-none">
-          <h2 class="font-semibold leading-6 text-indigo-600">Transactions</h2>
-          <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">A better way to send money</p>
+          <h2 class="font-semibold leading-6 text-indigo-600">
+            Transactions
+          </h2>
+          <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+            A better way to send money
+          </p>
         </div>
       </div>
       <div class="relative">

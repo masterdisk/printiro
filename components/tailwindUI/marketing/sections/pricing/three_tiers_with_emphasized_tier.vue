@@ -1,10 +1,30 @@
+<script setup>
+import { CheckIcon } from '@heroicons/vue/24/outline'
+
+const hobbyFeatures = ['Pariatur quod similique', 'Sapiente libero doloribus', 'Vel ipsa esse repudiandae']
+const scaleFeatures = ['Pariatur quod similique', 'Sapiente libero doloribus', 'Vel ipsa esse repudiandae']
+const growthFeatures = [
+  'Quia rem est sed impedit magnam',
+  'Dolorem vero ratione voluptates',
+  'Qui sed ab doloribus voluptatem dolore',
+  'Laborum commodi molestiae id et fugiat',
+  'Nam ut ipsa nesciunt culpa modi dolor',
+]
+</script>
+
 <template>
   <div class="bg-gray-900">
     <div class="px-6 pt-12 lg:px-8 lg:pt-20">
       <div class="text-center">
-        <h2 class="text-xl font-semibold leading-6 text-gray-300">Pricing</h2>
-        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">The right price for you, whoever you are</p>
-        <p class="mx-auto mt-3 max-w-4xl text-xl text-gray-300 sm:mt-5 sm:text-2xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus molestiae voluptatum.</p>
+        <h2 class="text-xl font-semibold leading-6 text-gray-300">
+          Pricing
+        </h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          The right price for you, whoever you are
+        </p>
+        <p class="mx-auto mt-3 max-w-4xl text-xl text-gray-300 sm:mt-5 sm:text-2xl">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus molestiae voluptatum.
+        </p>
       </div>
     </div>
 
@@ -18,7 +38,9 @@
                 <div class="flex flex-1 flex-col">
                   <div class="bg-white px-6 py-10">
                     <div>
-                      <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-hobby">Hobby</h3>
+                      <h3 id="tier-hobby" class="text-center text-2xl font-medium text-gray-900">
+                        Hobby
+                      </h3>
                       <div class="mt-4 flex items-center justify-center">
                         <span class="flex items-start px-3 text-6xl tracking-tight text-gray-900">
                           <span class="mt-2 mr-2 text-4xl font-medium tracking-tight">$</span>
@@ -34,7 +56,9 @@
                         <div class="flex-shrink-0">
                           <CheckIcon class="h-6 w-6 flex-shrink-0 text-green-500" aria-hidden="true" />
                         </div>
-                        <p class="ml-3 text-base font-medium text-gray-500">{{ feature }}</p>
+                        <p class="ml-3 text-base font-medium text-gray-500">
+                          {{ feature }}
+                        </p>
                       </li>
                     </ul>
                     <div class="mt-8">
@@ -56,7 +80,9 @@
                 </div>
                 <div class="rounded-t-lg bg-white px-6 pt-12 pb-10">
                   <div>
-                    <h3 class="text-center text-3xl font-semibold tracking-tight text-gray-900 sm:-mx-6" id="tier-growth">Growth</h3>
+                    <h3 id="tier-growth" class="text-center text-3xl font-semibold tracking-tight text-gray-900 sm:-mx-6">
+                      Growth
+                    </h3>
                     <div class="mt-4 flex items-center justify-center">
                       <span class="flex items-start px-3 text-6xl tracking-tight text-gray-900 sm:text-6xl">
                         <span class="mt-2 mr-2 text-4xl font-medium tracking-tight">$</span>
@@ -72,7 +98,9 @@
                       <div class="flex-shrink-0">
                         <CheckIcon class="h-6 w-6 flex-shrink-0 text-green-500" aria-hidden="true" />
                       </div>
-                      <p class="ml-3 text-base font-medium text-gray-500">{{ feature }}</p>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        {{ feature }}
+                      </p>
                     </li>
                   </ul>
                   <div class="mt-10">
@@ -88,7 +116,9 @@
                 <div class="flex flex-1 flex-col">
                   <div class="bg-white px-6 py-10">
                     <div>
-                      <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-scale">Scale</h3>
+                      <h3 id="tier-scale" class="text-center text-2xl font-medium text-gray-900">
+                        Scale
+                      </h3>
                       <div class="mt-4 flex items-center justify-center">
                         <span class="flex items-start px-3 text-6xl tracking-tight text-gray-900">
                           <span class="mt-2 mr-2 text-4xl font-medium tracking-tight">$</span>
@@ -104,7 +134,9 @@
                         <div class="flex-shrink-0">
                           <CheckIcon class="h-6 w-6 flex-shrink-0 text-green-500" aria-hidden="true" />
                         </div>
-                        <p class="ml-3 text-base font-medium text-gray-500">{{ feature }}</p>
+                        <p class="ml-3 text-base font-medium text-gray-500">
+                          {{ feature }}
+                        </p>
                       </li>
                     </ul>
                     <div class="mt-8">
@@ -122,17 +154,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { CheckIcon } from '@heroicons/vue/24/outline'
-
-const hobbyFeatures = ['Pariatur quod similique', 'Sapiente libero doloribus', 'Vel ipsa esse repudiandae']
-const scaleFeatures = ['Pariatur quod similique', 'Sapiente libero doloribus', 'Vel ipsa esse repudiandae']
-const growthFeatures = [
-  'Quia rem est sed impedit magnam',
-  'Dolorem vero ratione voluptates',
-  'Qui sed ab doloribus voluptatem dolore',
-  'Laborum commodi molestiae id et fugiat',
-  'Nam ut ipsa nesciunt culpa modi dolor',
-]
-</script>

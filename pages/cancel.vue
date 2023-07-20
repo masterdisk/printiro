@@ -4,10 +4,14 @@
       We are sorry that you canceled your transaction!
     </p>
     <p>
-      <NuxtLink to="/pricing">Pricing</NuxtLink>
+      <NuxtLink to="/pricing">
+        Pricing
+      </NuxtLink>
     </p>
     <p>
-      <NuxtLink to="/dashboard">To Your Dashboard</NuxtLink>
+      <NuxtLink to="/dashboard">
+        To Your Dashboard
+      </NuxtLink>
     </p>
   </div>
 </template>

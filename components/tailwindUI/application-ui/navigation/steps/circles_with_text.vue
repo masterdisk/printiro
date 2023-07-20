@@ -1,7 +1,24 @@
+<script setup>
+import { CheckIcon } from '@heroicons/vue/20/solid'
+
+const steps = [
+  { name: 'Create account', description: 'Vitae sed mi luctus laoreet.', href: '#', status: 'complete' },
+  {
+    name: 'Profile information',
+    description: 'Cursus semper viverra facilisis et et some more.',
+    href: '#',
+    status: 'current',
+  },
+  { name: 'Business information', description: 'Penatibus eu quis ante.', href: '#', status: 'upcoming' },
+  { name: 'Theme', description: 'Faucibus nec enim leo et.', href: '#', status: 'upcoming' },
+  { name: 'Preview', description: 'Iusto et officia maiores porro ad non quas.', href: '#', status: 'upcoming' },
+]
+</script>
+
 <template>
   <nav aria-label="Progress">
     <ol role="list" class="overflow-hidden">
-      <li v-for="(step, stepIdx) in steps" :key="step.name" :class="[stepIdx !== steps.length - 1 ? 'pb-10' : '', 'relative']">
+      <li v-for="(step, stepIdx) in steps" :key="step.name" class="relative" :class="[stepIdx !== steps.length - 1 ? 'pb-10' : '']">
         <template v-if="step.status === 'complete'">
           <div v-if="stepIdx !== steps.length - 1" class="absolute top-4 left-4 -ml-px mt-0.5 h-full w-0.5 bg-indigo-600" aria-hidden="true" />
           <a :href="step.href" class="group relative flex items-start">
@@ -48,20 +65,3 @@
     </ol>
   </nav>
 </template>
-
-<script setup>
-import { CheckIcon } from '@heroicons/vue/20/solid'
-
-const steps = [
-  { name: 'Create account', description: 'Vitae sed mi luctus laoreet.', href: '#', status: 'complete' },
-  {
-    name: 'Profile information',
-    description: 'Cursus semper viverra facilisis et et some more.',
-    href: '#',
-    status: 'current',
-  },
-  { name: 'Business information', description: 'Penatibus eu quis ante.', href: '#', status: 'upcoming' },
-  { name: 'Theme', description: 'Faucibus nec enim leo et.', href: '#', status: 'upcoming' },
-  { name: 'Preview', description: 'Iusto et officia maiores porro ad non quas.', href: '#', status: 'upcoming' },
-]
-</script>

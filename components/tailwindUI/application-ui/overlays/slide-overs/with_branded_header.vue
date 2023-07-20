@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
+
+const open = ref(true)
+</script>
+
 <template>
   <TransitionRoot as="template" :show="open">
     <Dialog as="div" class="relative z-10" @close="open = false">
@@ -11,7 +19,9 @@
                 <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                   <div class="bg-indigo-700 py-6 px-4 sm:px-6">
                     <div class="flex items-center justify-between">
-                      <DialogTitle class="text-lg font-medium text-white">Panel title</DialogTitle>
+                      <DialogTitle class="text-lg font-medium text-white">
+                        Panel title
+                      </DialogTitle>
                       <div class="ml-3 flex h-7 items-center">
                         <button type="button" class="rounded-md bg-indigo-700 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" @click="open = false">
                           <span class="sr-only">Close panel</span>
@@ -20,7 +30,9 @@
                       </div>
                     </div>
                     <div class="mt-1">
-                      <p class="text-sm text-indigo-300">Lorem, ipsum dolor sit amet consectetur adipisicing elit aliquam ad hic recusandae soluta.</p>
+                      <p class="text-sm text-indigo-300">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit aliquam ad hic recusandae soluta.
+                      </p>
                     </div>
                   </div>
                   <div class="relative flex-1 py-6 px-4 sm:px-6">
@@ -39,11 +51,3 @@
     </Dialog>
   </TransitionRoot>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
-
-const open = ref(true)
-</script>

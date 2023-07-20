@@ -1,3 +1,12 @@
+<script setup>
+import { HomeIcon } from '@heroicons/vue/20/solid'
+
+const pages = [
+  { name: 'Projects', href: '#', current: false },
+  { name: 'Project Nero', href: '#', current: true },
+]
+</script>
+
 <template>
   <nav class="flex" aria-label="Breadcrumb">
     <ol role="list" class="flex space-x-4 rounded-md bg-white px-6 shadow">
@@ -20,12 +29,3 @@
     </ol>
   </nav>
 </template>
-
-<script setup>
-import { HomeIcon } from '@heroicons/vue/20/solid'
-
-const pages = [
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Project Nero', href: '#', current: true },
-]
-</script>

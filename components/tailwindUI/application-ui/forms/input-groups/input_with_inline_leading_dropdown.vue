@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -24,7 +24,7 @@
           <option>EU</option>
         </select>
       </div>
-      <input type="text" name="phone-number" id="phone-number" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="+1 (555) 987-6543" />
+      <input id="phone-number" type="text" name="phone-number" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="+1 (555) 987-6543">
     </div>
   </div>
 </template>

@@ -1,42 +1,3 @@
-<template>
-  <div class="overflow-hidden bg-white shadow sm:rounded-md">
-    <ul role="list" class="divide-y divide-gray-200">
-      <li v-for="position in positions" :key="position.id">
-        <a href="#" class="block hover:bg-gray-50">
-          <div class="flex items-center px-4 py-4 sm:px-6">
-            <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-              <div class="truncate">
-                <div class="flex text-sm">
-                  <p class="truncate font-medium text-indigo-600">{{ position.title }}</p>
-                  <p class="ml-1 flex-shrink-0 font-normal text-gray-500">in {{ position.department }}</p>
-                </div>
-                <div class="mt-2 flex">
-                  <div class="flex items-center text-sm text-gray-500">
-                    <CalendarIcon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    <p>
-                      Closing on
-                      {{ ' ' }}
-                      <time :datetime="position.closeDate">{{ position.closeDateFull }}</time>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 flex-shrink-0 sm:mt-0 sm:ml-5">
-                <div class="flex -space-x-1 overflow-hidden">
-                  <img v-for="applicant in position.applicants" :key="applicant.email" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="applicant.imageUrl" :alt="applicant.name" />
-                </div>
-              </div>
-            </div>
-            <div class="ml-5 flex-shrink-0">
-              <ChevronRightIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</template>
-
 <script setup>
 import { CalendarIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 
@@ -130,3 +91,42 @@ const positions = [
   },
 ]
 </script>
+
+<template>
+  <div class="overflow-hidden bg-white shadow sm:rounded-md">
+    <ul role="list" class="divide-y divide-gray-200">
+      <li v-for="position in positions" :key="position.id">
+        <a href="#" class="block hover:bg-gray-50">
+          <div class="flex items-center px-4 py-4 sm:px-6">
+            <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
+              <div class="truncate">
+                <div class="flex text-sm">
+                  <p class="truncate font-medium text-indigo-600">{{ position.title }}</p>
+                  <p class="ml-1 flex-shrink-0 font-normal text-gray-500">in {{ position.department }}</p>
+                </div>
+                <div class="mt-2 flex">
+                  <div class="flex items-center text-sm text-gray-500">
+                    <CalendarIcon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                    <p>
+                      Closing on
+                      {{ ' ' }}
+                      <time :datetime="position.closeDate">{{ position.closeDateFull }}</time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 flex-shrink-0 sm:mt-0 sm:ml-5">
+                <div class="flex -space-x-1 overflow-hidden">
+                  <img v-for="applicant in position.applicants" :key="applicant.email" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="applicant.imageUrl" :alt="applicant.name">
+                </div>
+              </div>
+            </div>
+            <div class="ml-5 flex-shrink-0">
+              <ChevronRightIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>

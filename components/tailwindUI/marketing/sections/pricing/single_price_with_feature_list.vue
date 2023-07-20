@@ -1,3 +1,20 @@
+<script setup>
+import { CheckIcon } from '@heroicons/vue/24/outline'
+
+const features = [
+  'Vitae in pulvinar odio id utobortis in inter.',
+  'Sed sed id viverra viverra augue eget massa.',
+  'Urna, gravida amet, a, integer venenatis.',
+  'Lobortis sed pharetra amet vitae eleifend.',
+  'Ullamcorper blandit a consequat donec elit aoreet.',
+  'Dolor quo assumenda.',
+  'Esse rerum distinctio maiores maiores.',
+  'Eos enim officiis ratione.',
+  'Tempore molestiae aliquid excepturi.',
+  'Perspiciatis eveniet inventore eum et aliquam.',
+]
+</script>
+
 <template>
   <div class="bg-white">
     <div class="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
@@ -7,15 +24,23 @@
             <span class="text-gray-900">Everything you need for</span>
             <span class="text-indigo-600">$99 a month</span>
           </h1>
-          <p class="mt-5 text-xl text-gray-500">Includes every feature we offer plus unlimited projects and unlimited users.</p>
+          <p class="mt-5 text-xl text-gray-500">
+            Includes every feature we offer plus unlimited projects and unlimited users.
+          </p>
         </div>
         <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700 sm:mt-10 sm:w-auto xl:mt-0">Get started today</a>
       </div>
       <div class="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-3 xl:gap-x-8">
         <div>
-          <h2 class="text-lg font-semibold text-indigo-600">Everything you need</h2>
-          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900">All-in-one platform</p>
-          <p class="mt-4 text-lg text-gray-500">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec. Urna, sed a lectus elementum blandit et.</p>
+          <h2 class="text-lg font-semibold text-indigo-600">
+            Everything you need
+          </h2>
+          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900">
+            All-in-one platform
+          </p>
+          <p class="mt-4 text-lg text-gray-500">
+            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec. Urna, sed a lectus elementum blandit et.
+          </p>
         </div>
         <div class="mt-4 sm:mt-8 md:mt-10 md:grid md:grid-cols-2 md:gap-x-8 xl:col-span-2 xl:mt-0">
           <ul role="list" class="divide-y divide-gray-200">
@@ -47,20 +72,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { CheckIcon } from '@heroicons/vue/24/outline'
-
-const features = [
-  'Vitae in pulvinar odio id utobortis in inter.',
-  'Sed sed id viverra viverra augue eget massa.',
-  'Urna, gravida amet, a, integer venenatis.',
-  'Lobortis sed pharetra amet vitae eleifend.',
-  'Ullamcorper blandit a consequat donec elit aoreet.',
-  'Dolor quo assumenda.',
-  'Esse rerum distinctio maiores maiores.',
-  'Eos enim officiis ratione.',
-  'Tempore molestiae aliquid excepturi.',
-  'Perspiciatis eveniet inventore eum et aliquam.',
-]
-</script>

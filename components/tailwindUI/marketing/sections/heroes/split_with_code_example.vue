@@ -1,3 +1,7 @@
+<script setup>
+import { ChevronRightIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <div class="bg-white">
     <div class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
@@ -5,7 +9,7 @@
         <div class="px-6 lg:px-0 lg:pt-4">
           <div class="mx-auto max-w-2xl">
             <div class="max-w-lg">
-              <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="Your Company" />
+              <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="Your Company">
               <div class="mt-24 sm:mt-32 lg:mt-16">
                 <a href="#" class="inline-flex space-x-6">
                   <span class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">What's new</span>
@@ -15,8 +19,12 @@
                   </span>
                 </a>
               </div>
-              <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Supercharge your web applications</h1>
-              <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+              <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Supercharge your web applications
+              </h1>
+              <p class="mt-6 text-lg leading-8 text-gray-600">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+              </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Documentation</a>
                 <a href="#" class="text-base font-semibold leading-7 text-gray-900">View on GitHub <span aria-hidden="true">→</span></a>
@@ -34,8 +42,12 @@
                   <div class="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
                     <div class="flex bg-gray-800/40 ring-1 ring-white/5">
                       <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
-                        <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 py-2 px-4 text-white">NotificationSetting.jsx</div>
-                        <div class="border-r border-gray-600/10 py-2 px-4">App.jsx</div>
+                        <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 py-2 px-4 text-white">
+                          NotificationSetting.jsx
+                        </div>
+                        <div class="border-r border-gray-600/10 py-2 px-4">
+                          App.jsx
+                        </div>
                       </div>
                     </div>
                     <div class="px-6 pt-6 pb-14">
@@ -53,7 +65,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ChevronRightIcon } from '@heroicons/vue/20/solid'
-</script>

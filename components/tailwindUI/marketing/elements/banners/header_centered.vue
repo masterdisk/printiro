@@ -1,3 +1,7 @@
+<script setup>
+import { XMarkIcon } from '@heroicons/vue/24/outline'
+</script>
+
 <template>
   <div class="relative bg-indigo-600">
     <div class="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
@@ -22,7 +26,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { XMarkIcon } from '@heroicons/vue/24/outline'
-</script>

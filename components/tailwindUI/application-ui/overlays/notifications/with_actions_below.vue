@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+import { InboxIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from '@heroicons/vue/20/solid'
+
+const show = ref(true)
+</script>
+
 <template>
   <!-- Global notification live region, render this permanently at the end of the document -->
   <div aria-live="assertive" class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6">
@@ -11,15 +19,23 @@
                 <InboxIcon class="h-6 w-6 text-gray-400" aria-hidden="true" />
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
-                <p class="text-sm font-medium text-gray-900">Discussion moved</p>
-                <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</p>
+                <p class="text-sm font-medium text-gray-900">
+                  Discussion moved
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.
+                </p>
                 <div class="mt-3 flex space-x-7">
-                  <button type="button" class="rounded-md bg-white text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Undo</button>
-                  <button type="button" class="rounded-md bg-white text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Dismiss</button>
+                  <button type="button" class="rounded-md bg-white text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Undo
+                  </button>
+                  <button type="button" class="rounded-md bg-white text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Dismiss
+                  </button>
                 </div>
               </div>
               <div class="ml-4 flex flex-shrink-0">
-                <button type="button" @click="show = false" class="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <button type="button" class="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" @click="show = false">
                   <span class="sr-only">Close</span>
                   <XMarkIcon class="h-5 w-5" aria-hidden="true" />
                 </button>
@@ -31,11 +47,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { InboxIcon } from '@heroicons/vue/24/outline'
-import { XMarkIcon } from '@heroicons/vue/20/solid'
-
-const show = ref(true)
-</script>

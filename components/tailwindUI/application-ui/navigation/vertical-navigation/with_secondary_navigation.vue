@@ -1,22 +1,3 @@
-<template>
-  <nav aria-label="Sidebar">
-    <div class="space-y-1">
-      <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-3 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
-        <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'flex-shrink-0 -ml-1 mr-3 h-6 w-6']" aria-hidden="true" />
-        <span class="truncate">{{ item.name }}</span>
-      </a>
-    </div>
-    <div class="mt-8">
-      <h3 class="px-3 text-sm font-medium text-gray-500" id="projects-headline">Projects</h3>
-      <div class="mt-1 space-y-1" aria-labelledby="projects-headline">
-        <a v-for="item in secondaryNavigation" :key="item.name" :href="item.href" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-          <span class="truncate">{{ item.name }}</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-</template>
-
 <script setup>
 import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from '@heroicons/vue/24/outline'
 
@@ -35,3 +16,24 @@ const secondaryNavigation = [
   { name: 'Profit sharing program', href: '#' },
 ]
 </script>
+
+<template>
+  <nav aria-label="Sidebar">
+    <div class="space-y-1">
+      <a v-for="item in navigation" :key="item.name" :href="item.href" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900']" :aria-current="item.current ? 'page' : undefined">
+        <component :is="item.icon" class="flex-shrink-0 -ml-1 mr-3 h-6 w-6" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500']" aria-hidden="true" />
+        <span class="truncate">{{ item.name }}</span>
+      </a>
+    </div>
+    <div class="mt-8">
+      <h3 id="projects-headline" class="px-3 text-sm font-medium text-gray-500">
+        Projects
+      </h3>
+      <div class="mt-1 space-y-1" aria-labelledby="projects-headline">
+        <a v-for="item in secondaryNavigation" :key="item.name" :href="item.href" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+          <span class="truncate">{{ item.name }}</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</template>

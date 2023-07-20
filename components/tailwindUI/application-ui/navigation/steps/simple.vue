@@ -1,3 +1,11 @@
+<script setup>
+const steps = [
+  { id: 'Step 1', name: 'Job details', href: '#', status: 'complete' },
+  { id: 'Step 2', name: 'Application form', href: '#', status: 'current' },
+  { id: 'Step 3', name: 'Preview', href: '#', status: 'upcoming' },
+]
+</script>
+
 <template>
   <nav aria-label="Progress">
     <ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
@@ -18,11 +26,3 @@
     </ol>
   </nav>
 </template>
-
-<script setup>
-const steps = [
-  { id: 'Step 1', name: 'Job details', href: '#', status: 'complete' },
-  { id: 'Step 2', name: 'Application form', href: '#', status: 'current' },
-  { id: 'Step 3', name: 'Preview', href: '#', status: 'upcoming' },
-]
-</script>

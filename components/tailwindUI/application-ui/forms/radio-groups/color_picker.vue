@@ -1,17 +1,3 @@
-<template>
-  <RadioGroup v-model="selectedColor">
-    <RadioGroupLabel class="block text-sm font-medium text-gray-700">Choose a label color</RadioGroupLabel>
-    <div class="mt-4 flex items-center space-x-3">
-      <RadioGroupOption as="template" v-for="color in colors" :key="color.name" :value="color" v-slot="{ active, checked }">
-        <div :class="[color.selectedColor, active && checked ? 'ring ring-offset-1' : '', !active && checked ? 'ring-2' : '', '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none']">
-          <RadioGroupLabel as="span" class="sr-only">{{ color.name }}</RadioGroupLabel>
-          <span aria-hidden="true" :class="[color.bgColor, 'h-8 w-8 border border-black border-opacity-10 rounded-full']" />
-        </div>
-      </RadioGroupOption>
-    </div>
-  </RadioGroup>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue'
@@ -26,3 +12,21 @@ const colors = [
 
 const selectedColor = ref(colors[1])
 </script>
+
+<template>
+  <RadioGroup v-model="selectedColor">
+    <RadioGroupLabel class="block text-sm font-medium text-gray-700">
+      Choose a label color
+    </RadioGroupLabel>
+    <div class="mt-4 flex items-center space-x-3">
+      <RadioGroupOption v-for="color in colors" :key="color.name" v-slot="{ active, checked }" as="template" :value="color">
+        <div class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none" :class="[color.selectedColor, active && checked ? 'ring ring-offset-1' : '', !active && checked ? 'ring-2' : '']">
+          <RadioGroupLabel as="span" class="sr-only">
+            {{ color.name }}
+          </RadioGroupLabel>
+          <span aria-hidden="true" class="h-8 w-8 border border-black border-opacity-10 rounded-full" :class="[color.bgColor]" />
+        </div>
+      </RadioGroupOption>
+    </div>
+  </RadioGroup>
+</template>

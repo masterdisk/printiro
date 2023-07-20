@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -13,14 +13,22 @@
   }
   ```
 -->
+<script setup>
+import { CameraIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <div class="overflow-hidden bg-white">
     <div class="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
       <div class="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-50 lg:block" />
       <div class="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
         <div>
-          <h2 class="text-lg font-semibold text-indigo-600">Case Study</h2>
-          <h3 class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">Meet Whitney</h3>
+          <h2 class="text-lg font-semibold text-indigo-600">
+            Case Study
+          </h2>
+          <h3 class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+            Meet Whitney
+          </h3>
         </div>
       </div>
       <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -36,7 +44,7 @@
           <div class="relative mx-auto max-w-prose text-base lg:max-w-none">
             <figure>
               <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                <img class="rounded-lg object-cover object-center shadow-lg" src="https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376" />
+                <img class="rounded-lg object-cover object-center shadow-lg" src="https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376">
               </div>
               <figcaption class="mt-3 flex text-sm text-gray-500">
                 <CameraIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
@@ -47,7 +55,9 @@
         </div>
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto max-w-prose text-base lg:max-w-none">
-            <p class="text-lg text-gray-500">Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.</p>
+            <p class="text-lg text-gray-500">
+              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+            </p>
           </div>
           <div class="prose prose-indigo mx-auto mt-5 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
             <p>Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.</p>
@@ -68,7 +78,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { CameraIcon } from '@heroicons/vue/20/solid'
-</script>

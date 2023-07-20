@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -12,12 +12,20 @@
   }
   ```
 -->
+<script setup>
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <div class="bg-gray-800">
     <div class="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:flex lg:justify-between lg:px-8">
       <div class="max-w-xl">
-        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">Pricing Plans</h2>
-        <p class="mt-5 text-xl text-gray-400">Start building for free, then add a site plan to go live. Account plans unlock additional features.</p>
+        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Pricing Plans
+        </h2>
+        <p class="mt-5 text-xl text-gray-400">
+          Start building for free, then add a site plan to go live. Account plans unlock additional features.
+        </p>
       </div>
       <div class="mt-10 w-full max-w-xs">
         <label for="currency" class="block text-base font-medium text-gray-300">Currency</label>
@@ -25,7 +33,9 @@
           <select id="currency" name="currency" class="block w-full appearance-none rounded-md border border-transparent bg-gray-700 bg-none py-2 pl-3 pr-10 text-base text-white focus:border-white focus:outline-none focus:ring-1 focus:ring-white sm:text-sm">
             <option>Argentina (ARS)</option>
             <option>Australia (AUD)</option>
-            <option selected="">United States (USD)</option>
+            <option selected="">
+              United States (USD)
+            </option>
             <option>Canada (CAD)</option>
             <option>France (EUR)</option>
             <option>Japan (JPY)</option>
@@ -41,7 +51,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
-</script>

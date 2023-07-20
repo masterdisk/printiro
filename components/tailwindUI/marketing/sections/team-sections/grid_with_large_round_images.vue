@@ -1,19 +1,39 @@
+<script setup>
+const people = [
+  {
+    name: 'Whitney Francis',
+    role: 'Copywriter',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    twitterUrl: '#',
+    linkedinUrl: '#',
+  },
+  // More people...
+]
+</script>
+
 <template>
   <div class="bg-white">
     <div class="mx-auto max-w-7xl py-12 px-6 text-center lg:px-8 lg:py-24">
       <div class="space-y-12">
         <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Meet our team</h2>
-          <p class="text-xl text-gray-500">Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet lectus sit pretium egestas vel mattis neque.</p>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Meet our team
+          </h2>
+          <p class="text-xl text-gray-500">
+            Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet lectus sit pretium egestas vel mattis neque.
+          </p>
         </div>
         <ul role="list" class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3">
           <li v-for="person in people" :key="person.name">
             <div class="space-y-6">
-              <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" :src="person.imageUrl" alt="" />
+              <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" :src="person.imageUrl" alt="">
               <div class="space-y-2">
                 <div class="space-y-1 text-lg font-medium leading-6">
                   <h3>{{ person.name }}</h3>
-                  <p class="text-indigo-600">{{ person.role }}</p>
+                  <p class="text-indigo-600">
+                    {{ person.role }}
+                  </p>
                 </div>
                 <ul role="list" class="flex justify-center space-x-5">
                   <li>
@@ -41,17 +61,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const people = [
-  {
-    name: 'Whitney Francis',
-    role: 'Copywriter',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  // More people...
-]
-</script>

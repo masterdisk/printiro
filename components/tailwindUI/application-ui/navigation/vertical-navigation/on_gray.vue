@@ -1,13 +1,3 @@
-<template>
-  <nav class="space-y-1" aria-label="Sidebar">
-    <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'flex items-center px-3 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
-      <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400', 'flex-shrink-0 -ml-1 mr-3 h-6 w-6']" aria-hidden="true" />
-      <span class="truncate">{{ item.name }}</span>
-      <span v-if="item.count" :class="[item.current ? 'bg-gray-50' : 'bg-gray-200 text-gray-600', 'ml-auto inline-block py-0.5 px-3 text-xs rounded-full']">{{ item.count }}</span>
-    </a>
-  </nav>
-</template>
-
 <script setup>
 import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from '@heroicons/vue/24/outline'
 
@@ -20,3 +10,13 @@ const navigation = [
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
 ]
 </script>
+
+<template>
+  <nav class="space-y-1" aria-label="Sidebar">
+    <a v-for="item in navigation" :key="item.name" :href="item.href" class="flex items-center px-3 py-2 text-sm font-medium rounded-md" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900']" :aria-current="item.current ? 'page' : undefined">
+      <component :is="item.icon" class="flex-shrink-0 -ml-1 mr-3 h-6 w-6" :class="[item.current ? 'text-gray-500' : 'text-gray-400']" aria-hidden="true" />
+      <span class="truncate">{{ item.name }}</span>
+      <span v-if="item.count" class="ml-auto inline-block py-0.5 px-3 text-xs rounded-full" :class="[item.current ? 'bg-gray-50' : 'bg-gray-200 text-gray-600']">{{ item.count }}</span>
+    </a>
+  </nav>
+</template>

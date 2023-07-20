@@ -1,3 +1,14 @@
+<script setup>
+import { CheckCircleIcon } from '@heroicons/vue/20/solid'
+
+const steps = [
+  { name: 'Create account', href: '#', status: 'complete' },
+  { name: 'Profile information', href: '#', status: 'current' },
+  { name: 'Theme', href: '#', status: 'upcoming' },
+  { name: 'Preview', href: '#', status: 'upcoming' },
+]
+</script>
+
 <template>
   <div class="py-12 px-4 sm:px-6 lg:px-8">
     <nav class="flex justify-center" aria-label="Progress">
@@ -31,14 +42,3 @@
     </nav>
   </div>
 </template>
-
-<script setup>
-import { CheckCircleIcon } from '@heroicons/vue/20/solid'
-
-const steps = [
-  { name: 'Create account', href: '#', status: 'complete' },
-  { name: 'Profile information', href: '#', status: 'current' },
-  { name: 'Theme', href: '#', status: 'upcoming' },
-  { name: 'Preview', href: '#', status: 'upcoming' },
-]
-</script>

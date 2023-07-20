@@ -27,13 +27,9 @@ async function handleStandardSignin() {
 }
 
 async function handleFacebookSignin() {
-  // eslint-disable-next-line no-console
-  console.log('handleFacebookSignin')
   try {
     loading.value = true
-    const { error } = await supabase.auth.signInWithOAuth({ provider: 'facebook' })
-    if (error)
-      throw error
+    await supabase.auth.signInWithOAuth({ provider: 'facebook' })
   }
   catch (error) {
     notifyStore.notify(error, NotificationType.Error)
@@ -41,6 +37,8 @@ async function handleFacebookSignin() {
   finally {
     loading.value = false
   }
+  // eslint-disable-next-line no-console
+  console.log('handleFacebookSignins22323sss')
 }
 
 watchEffect(async () => {
@@ -88,15 +86,15 @@ watchEffect(async () => {
       <p class="text-center">
         or
       </p>
-      <button
-        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700"
-        @click="handleFacebookSignin()"
-      >
-        <span class="flex items-center justify-center space-x-2">
-          <Icon class="w-5 h-5" name="fa-brands:facebook" />
-          <span>Sign in with Facebook</span>
-        </span>
-      </button>
+      <!--      <button -->
+      <!--        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700" -->
+      <!--        @click="handleFacebookSignin()" -->
+      <!--      > -->
+      <!--        <span class="flex items-center justify-center space-x-2"> -->
+      <!--          <Icon class="w-5 h-5" name="fa-brands:facebook" /> -->
+      <!--          <span>Sign in with Facebook</span> -->
+      <!--        </span> -->
+      <!--      </button> -->
     </div>
   </div>
 </template>

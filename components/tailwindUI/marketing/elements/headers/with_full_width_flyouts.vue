@@ -108,7 +108,7 @@ const blogPosts = [
         class="mx-auto flex max-w-7xl items-center justify-between py-5 px-6 sm:py-4 md:justify-start md:space-x-10 lg:px-8"
       >
         <div>
-          <a class="flex" href="#">
+          <a class="flex" href="/">
             <span class="sr-only">Your Company</span>
             <img
               alt="" class="h-8 w-auto sm:h-10"

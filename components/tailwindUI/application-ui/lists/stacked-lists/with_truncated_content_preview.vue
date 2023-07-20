@@ -1,6 +1,6 @@
 <!--
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -12,26 +12,6 @@
   }
   ```
 -->
-<template>
-  <ul role="list" class="divide-y divide-gray-200">
-    <li v-for="message in messages" :key="message.id" class="relative bg-white py-5 px-4 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50">
-      <div class="flex justify-between space-x-3">
-        <div class="min-w-0 flex-1">
-          <a href="#" class="block focus:outline-none">
-            <span class="absolute inset-0" aria-hidden="true" />
-            <p class="truncate text-sm font-medium text-gray-900">{{ message.sender }}</p>
-            <p class="truncate text-sm text-gray-500">{{ message.subject }}</p>
-          </a>
-        </div>
-        <time :datetime="message.datetime" class="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">{{ message.time }}</time>
-      </div>
-      <div class="mt-1">
-        <p class="text-sm text-gray-600 line-clamp-2">{{ message.preview }}</p>
-      </div>
-    </li>
-  </ul>
-</template>
-
 <script setup>
 const messages = [
   {
@@ -46,3 +26,25 @@ const messages = [
   // More messages...
 ]
 </script>
+
+<template>
+  <ul role="list" class="divide-y divide-gray-200">
+    <li v-for="message in messages" :key="message.id" class="relative bg-white py-5 px-4 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50">
+      <div class="flex justify-between space-x-3">
+        <div class="min-w-0 flex-1">
+          <a href="#" class="block focus:outline-none">
+            <span class="absolute inset-0" aria-hidden="true" />
+            <p class="truncate text-sm font-medium text-gray-900">{{ message.sender }}</p>
+            <p class="truncate text-sm text-gray-500">{{ message.subject }}</p>
+          </a>
+        </div>
+        <time :datetime="message.datetime" class="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">{{ message.time }}</time>
+      </div>
+      <div class="mt-1">
+        <p class="text-sm text-gray-600 line-clamp-2">
+          {{ message.preview }}
+        </p>
+      </div>
+    </li>
+  </ul>
+</template>

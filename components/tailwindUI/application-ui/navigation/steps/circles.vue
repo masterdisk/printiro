@@ -1,7 +1,19 @@
+<script setup>
+import { CheckIcon } from '@heroicons/vue/20/solid'
+
+const steps = [
+  { name: 'Step 1', href: '#', status: 'complete' },
+  { name: 'Step 2', href: '#', status: 'complete' },
+  { name: 'Step 3', href: '#', status: 'current' },
+  { name: 'Step 4', href: '#', status: 'upcoming' },
+  { name: 'Step 5', href: '#', status: 'upcoming' },
+]
+</script>
+
 <template>
   <nav aria-label="Progress">
     <ol role="list" class="flex items-center">
-      <li v-for="(step, stepIdx) in steps" :key="step.name" :class="[stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-20' : '', 'relative']">
+      <li v-for="(step, stepIdx) in steps" :key="step.name" class="relative" :class="[stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-20' : '']">
         <template v-if="step.status === 'complete'">
           <div class="absolute inset-0 flex items-center" aria-hidden="true">
             <div class="h-0.5 w-full bg-indigo-600" />
@@ -33,15 +45,3 @@
     </ol>
   </nav>
 </template>
-
-<script setup>
-import { CheckIcon } from '@heroicons/vue/20/solid'
-
-const steps = [
-  { name: 'Step 1', href: '#', status: 'complete' },
-  { name: 'Step 2', href: '#', status: 'complete' },
-  { name: 'Step 3', href: '#', status: 'current' },
-  { name: 'Step 4', href: '#', status: 'upcoming' },
-  { name: 'Step 5', href: '#', status: 'upcoming' },
-]
-</script>

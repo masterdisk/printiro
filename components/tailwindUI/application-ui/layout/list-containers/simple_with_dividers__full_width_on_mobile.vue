@@ -1,3 +1,10 @@
+<script setup>
+const items = [
+  { id: 1 },
+  // More items...
+]
+</script>
+
 <template>
   <ul role="list" class="divide-y divide-gray-200">
     <li v-for="item in items" :key="item.id" class="px-4 py-4 sm:px-0">
@@ -5,10 +12,3 @@
     </li>
   </ul>
 </template>
-
-<script setup>
-const items = [
-  { id: 1 },
-  // More items...
-]
-</script>

@@ -1,9 +1,18 @@
+<script setup>
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { EllipsisVerticalIcon } from '@heroicons/vue/20/solid'
+</script>
+
 <template>
   <div class="border-b border-gray-200 pb-5">
     <div class="sm:flex sm:items-baseline sm:justify-between">
       <div class="sm:w-0 sm:flex-1">
-        <h1 id="message-heading" class="text-lg font-medium text-gray-900">Full-Stack Developer</h1>
-        <p class="mt-1 truncate text-sm text-gray-500">Checkout and Payments Team</p>
+        <h1 id="message-heading" class="text-lg font-medium text-gray-900">
+          Full-Stack Developer
+        </h1>
+        <p class="mt-1 truncate text-sm text-gray-500">
+          Checkout and Payments Team
+        </p>
       </div>
 
       <div class="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
@@ -20,17 +29,17 @@
             <MenuItems class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'flex justify-between px-4 py-2 text-sm']">
+                  <a href="#" class="flex justify-between px-4 py-2 text-sm" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700']">
                     <span>Edit</span>
                   </a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'flex justify-between px-4 py-2 text-sm']">
+                  <a href="#" class="flex justify-between px-4 py-2 text-sm" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700']">
                     <span>Duplicate</span>
                   </a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                  <button type="button" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'flex w-full justify-between px-4 py-2 text-sm']">
+                  <button type="button" class="flex w-full justify-between px-4 py-2 text-sm" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700']">
                     <span>Archive</span>
                   </button>
                 </MenuItem>
@@ -42,8 +51,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { EllipsisVerticalIcon } from '@heroicons/vue/20/solid'
-</script>
