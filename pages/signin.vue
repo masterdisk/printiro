@@ -1,72 +1,99 @@
-<script setup lang="ts">
-  const user = useSupabaseUser()
-  const supabase = useSupabaseAuthClient();
+<script lang="ts" setup>
+const user = useSupabaseUser()
+const supabase = useSupabaseAuthClient()
 
-  const accountStore = useAccountStore()
-  const notifyStore = useNotifyStore();
+const accountStore = useAccountStore()
+const notifyStore = useNotifyStore()
 
-  const loading = ref(false)
-  const email = ref('')
-  const password = ref('')
+const loading = ref(false)
+const email = ref('')
+const password = ref('')
 
-  const handleStandardSignin = async () => {
-    console.log(`handleStandardSignin email.value:${email.value}, password.value:${password.value}`);
-    try {
-      loading.value = true
-      const { error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
-      if (error) throw error
-    } catch (error) {
-      notifyStore.notify(error, NotificationType.Error);
-    } finally {
-      loading.value = false
-    }
+async function handleStandardSignin() {
+  // eslint-disable-next-line no-console
+  console.log(`handleStandardSignin email.value:${email.value}, password.value:${password.value}`)
+  try {
+    loading.value = true
+    const { error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
+    if (error)
+      throw error
   }
-
-  const handleFacebookSignin = async () => {
-    console.log('handleFacebookSignin');
-    try {
-      loading.value = true
-      const { error } = await supabase.auth.signInWithOAuth({ provider: 'facebook' })
-      if (error) throw error
-    } catch (error) {
-      notifyStore.notify(error, NotificationType.Error);
-    } finally {
-      loading.value = false
-    }
+  catch (error) {
+    notifyStore.notify(error, NotificationType.Error)
   }
+  finally {
+    loading.value = false
+  }
+}
 
+async function handleFacebookSignin() {
+  // eslint-disable-next-line no-console
+  console.log('handleFacebookSignin')
+  try {
+    loading.value = true
+    const { error } = await supabase.auth.signInWithOAuth({ provider: 'facebook' })
+    if (error)
+      throw error
+  }
+  catch (error) {
+    notifyStore.notify(error, NotificationType.Error)
+  }
+  finally {
+    loading.value = false
+  }
+}
 
-  watchEffect(async () => {
-    if (user.value) {
-      await accountStore.init();
-      navigateTo('/dashboard', {replace: true})
-    }
-  })  
+watchEffect(async () => {
+  if (user.value) {
+    await accountStore.init()
+    navigateTo('/dashboard', { replace: true })
+  }
+})
 </script>
+
 <template>
   <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
     <div class="w-full max-w-md p-6 space-y-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl font-bold text-center">Sign in</h1>
-      <form @submit.prevent="handleStandardSignin" class="space-y-4">
+      <h1 class="text-3xl font-bold text-center">
+        Sign in
+      </h1>
+      <form class="space-y-4" @submit.prevent="handleStandardSignin">
         <div>
-          <label for="email" class="block mb-2 font-bold">Email</label>
-          <input v-model="email" id="email" type="email" class="w-full p-2 border border-gray-400 rounded-md"
-            placeholder="Enter your email" required>
+          <label class="block mb-2 font-bold" for="email">Email</label>
+          <input
+            id="email" v-model="email" class="w-full p-2 border border-gray-400 rounded-md"
+            placeholder="Enter your email"
+            required type="email"
+          >
         </div>
         <div>
-          <label for="password" class="block mb-2 font-bold">Password</label>
-          <input v-model="password" id="password" type="password" class="w-full p-2 border border-gray-400 rounded-md"
-            placeholder="Enter your password" required>
+          <label class="block mb-2 font-bold" for="password">Password</label>
+          <input
+            id="password" v-model="password" class="w-full p-2 border border-gray-400 rounded-md"
+            placeholder="Enter your password"
+            required type="password"
+          >
         </div>
-        <NuxtLink id="forgotPasswordLink" to="/forgotpassword" class="text-right block">Forgot your password?</NuxtLink>
-        <button :disabled="loading || password === ''" type="submit"
-          class="w-full py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">Sign in</button>
+        <NuxtLink id="forgotPasswordLink" class="text-right block" to="/forgotpassword">
+          Forgot your password?
+        </NuxtLink>
+        <button
+          :disabled="loading || password === ''"
+          class="w-full py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+          type="submit"
+        >
+          Sign in
+        </button>
       </form>
-      <p class="text-center">or</p>
-      <button @click="handleFacebookSignin()"
-        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700">
+      <p class="text-center">
+        or
+      </p>
+      <button
+        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700"
+        @click="handleFacebookSignin()"
+      >
         <span class="flex items-center justify-center space-x-2">
-          <Icon name="fa-brands:facebook" class="w-5 h-5" />
+          <Icon class="w-5 h-5" name="fa-brands:facebook" />
           <span>Sign in with Facebook</span>
         </span>
       </button>
