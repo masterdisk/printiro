@@ -59,11 +59,11 @@
           <p v-if="signUpOk" class="mt-4 text-lg text-center">You have successfully signed up.  Please check your email for a link to confirm your email address and proceed.</p>
       </form>
       <p class="text-center">or</p>
-      <button @click="supabase.auth.signInWithOAuth({ provider: 'google' })"
+      <button @click="supabase.auth.signInWithOAuth({ provider: 'facebook' })"
         class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700">
         <span class="flex items-center justify-center space-x-2">
-          <Icon name="fa-brands:google" class="w-5 h-5" />
-          <span>Sign up with Google</span>
+          <Icon name="fa-brands:facebook" class="w-5 h-5" />
+          <span>Sign up with Facebook</span>
         </span>
       </button>
       <p class="mt-4 text-xs text-center text-gray-500">
