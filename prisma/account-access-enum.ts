@@ -4,7 +4,7 @@
 import type { ACCOUNT_ACCESS as ACCOUNT_ACCESS_ORIGINAL } from '@prisma/client'
 
 // Guarantee that the implementation corresponds to the original type
-export const ACCOUNT_ACCESS: { [k in ACCOUNT_ACCESS_ORIGINAL ]: k } = {
+export const ACCOUNT_ACCESS: { [k in ACCOUNT_ACCESS_ORIGINAL]: k } = {
   READ_ONLY: 'READ_ONLY',
   READ_WRITE: 'READ_WRITE',
   ADMIN: 'ADMIN',

@@ -34,7 +34,10 @@ async function signout() {
           >
             <span class="sr-only">Close</span>
             <svg
-              aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              aria-hidden="true"
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -51,11 +54,25 @@ async function signout() {
     <div class="navbar-start">
       <div class="dropdown">
         <label class="btn btn-ghost lg:hidden" tabindex="0">
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 6h16M4 12h8m-8 6h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+          <svg
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6h16M4 12h8m-8 6h16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
           </svg>
         </label>
-        <ul class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" tabindex="0">
+        <ul
+          class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          tabindex="0"
+        >
           <li v-if="user">
             <NuxtLink to="/dashboard">
               Dashboard
@@ -100,7 +117,10 @@ async function signout() {
           </NuxtLink>
         </li>
         <li v-if="!user">
-          <a href="https://github.com/JavascriptMick/nuxt3-boilerplate" title="github">
+          <a
+            href="https://github.com/JavascriptMick/nuxt3-boilerplate"
+            title="github"
+          >
             <Icon name="mdi:github" />
           </a>
         </li>
@@ -110,11 +130,22 @@ async function signout() {
       <div class="dropdown dropdown-end">
         <label class="btn btn-ghost btn-circle avatar" tabindex="0">
           <div class="w-10 rounded-full">
-            <img v-if="user.user_metadata.avatar_url" :src="user.user_metadata.avatar_url" alt="avatar image">
-            <img v-else alt="default avatar image" src="~/assets/images/avatar.svg">
+            <img
+              v-if="user.user_metadata.avatar_url"
+              :src="user.user_metadata.avatar_url"
+              alt="avatar image"
+            >
+            <img
+              v-else
+              alt="default avatar image"
+              src="~/assets/images/avatar.svg"
+            >
           </div>
         </label>
-        <ul class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52" tabindex="0">
+        <ul
+          class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+          tabindex="0"
+        >
           <li v-if="user">
             {{ user.email }}
           </li>
@@ -124,11 +155,17 @@ async function signout() {
             </NuxtLink>
           </li>
           <li><a href="#" @click.prevent="signout()">Signout</a></li>
-          <template v-if="dbUser?.memberships && dbUser?.memberships.length > 1">
+          <template
+            v-if="dbUser?.memberships && dbUser?.memberships.length > 1"
+          >
             <li>Switch Account</li>
             <li v-for="membership in dbUser?.memberships">
               <a
-                v-if="membership.account_id !== activeAccountId && !membership.pending" href="#"
+                v-if="
+                  membership.account_id !== activeAccountId
+                    && !membership.pending
+                "
+                href="#"
                 @click="accountStore.changeActiveAccount(membership.account_id)"
               >{{ membership.account.name }}</a>
               <span v-if="membership.pending">{{ membership.account.name }} (pending)</span>

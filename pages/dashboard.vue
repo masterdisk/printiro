@@ -1,32 +1,5 @@
 <script lang="ts" setup>
-import { storeToRefs } from 'pinia'
-import Dark_sidebar_with_light_header
-  from '~/components/tailwindUI/application-ui/application-shells/sidebar/dark_sidebar_with_light_header.vue'
-
-definePageMeta({
-  middleware: ['auth'],
-})
-
-const accountStore = useAccountStore()
-const { activeMembership } = storeToRefs(accountStore)
-const notesStore = useNotesStore()
-const { notes } = storeToRefs(notesStore) // ensure the notes list is reactive
-const newNoteText = ref('')
-
-async function addNote() {
-  await notesStore.createNote(newNoteText.value)
-  newNoteText.value = ''
-}
-
-async function genNote() {
-  const genNoteText = await notesStore.generateAINoteFromPrompt(newNoteText.value)
-  newNoteText.value = genNoteText
-}
-
-onMounted(async () => {
-  await accountStore.init()
-  await notesStore.fetchNotesForCurrentUser()
-})
+import Dark_sidebar_with_light_header from '~/components/tailwindUI/application-ui/application-shells/sidebar/dark_sidebar_with_light_header.vue'
 </script>
 
 <template>

@@ -4,9 +4,9 @@ import type { AppRouter } from '~/server/api/trpc/[trpc]'
 
 export default defineNuxtPlugin(() => {
   /**
-   * createTRPCNuxtClient adds a `useQuery` composable
-   * built on top of `useAsyncData`.
-   */
+     * createTRPCNuxtClient adds a `useQuery` composable
+     * built on top of `useAsyncData`.
+     */
   const client = createTRPCNuxtClient<AppRouter>({
     links: [
       httpBatchLink({

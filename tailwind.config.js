@@ -1,5 +1,9 @@
 export default {
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+    require('@tailwindcss/forms'),
+  ],
   daisyui: {
     styled: true,
     themes: ['acid', 'night'],

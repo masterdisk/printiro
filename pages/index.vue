@@ -1,15 +1,13 @@
 <script lang="ts" setup>
-import with_product_screenshot
-  from '~/components/tailwindUI/marketing/sections/feature-sections/with_product_screenshot.vue'
-import Dark_panel_with_app_screenshot
-  from '~/components/tailwindUI/marketing/sections/cta-sections/dark_panel_with_app_screenshot.vue'
-import Split_with_code_example from '~/components/tailwindUI/marketing/sections/heroes/split_with_code_example.vue'
+import with_phone_mockup from '~/components/tailwindUI/marketing/sections/heroes/split_with_screenshot.vue'
+import with_product_screenshot from '~/components/tailwindUI/marketing/sections/feature-sections/with_product_screenshot.vue'
+import Dark_panel_with_app_screenshot from '~/components/tailwindUI/marketing/sections/cta-sections/dark_panel_with_app_screenshot.vue'
 
 definePageMeta({ layout: 'landing-page' })
 </script>
 
 <template>
-  <Split_with_code_example />
+  <with_phone_mockup />
   <Dark_panel_with_app_screenshot />
   <with_product_screenshot />
 </template>
