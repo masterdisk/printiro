@@ -41,6 +41,21 @@ async function handleFacebookSignin() {
   console.log('handleFacebookSignins22323sss')
 }
 
+async function handleGoogleSignin() {
+  try {
+    loading.value = true
+    await supabase.auth.signInWithOAuth({ provider: 'google' })
+  }
+  catch (error) {
+    notifyStore.notify(error, NotificationType.Error)
+  }
+  finally {
+    loading.value = false
+  }
+  // eslint-disable-next-line no-console
+  console.log('handled google')
+}
+
 watchEffect(async () => {
   if (user.value) {
     await accountStore.init()
@@ -86,15 +101,25 @@ watchEffect(async () => {
       <p class="text-center">
         or
       </p>
-      <!--      <button -->
-      <!--        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700" -->
-      <!--        @click="handleFacebookSignin()" -->
-      <!--      > -->
-      <!--        <span class="flex items-center justify-center space-x-2"> -->
-      <!--          <Icon class="w-5 h-5" name="fa-brands:facebook" /> -->
-      <!--          <span>Sign in with Facebook</span> -->
-      <!--        </span> -->
-      <!--      </button> -->
+      <button
+        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700"
+        @click="handleFacebookSignin()"
+      >
+        <span class="flex items-center justify-center space-x-2">
+          <Icon class="w-5 h-5" name="fa-brands:facebook" />
+          <span>Sign in with Facebook</span>
+        </span>
+      </button>
+      or
+      <button
+        class="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700"
+        @click="handleGoogleSignin()"
+      >
+        <span class="flex items-center justify-center space-x-2">
+          <Icon class="w-5 h-5" name="fa-brands:google" />
+          <span>Sign in with Google</span>
+        </span>
+      </button>
     </div>
   </div>
 </template>
