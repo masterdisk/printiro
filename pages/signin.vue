@@ -10,8 +10,6 @@ const email = ref('')
 const password = ref('')
 
 async function handleStandardSignin() {
-  // eslint-disable-next-line no-console
-  console.log(`handleStandardSignin email.value:${email.value}, password.value:${password.value}`)
   try {
     loading.value = true
     const { error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
@@ -29,7 +27,15 @@ async function handleStandardSignin() {
 async function handleFacebookSignin() {
   try {
     loading.value = true
-    await supabase.auth.signInWithOAuth({ provider: 'facebook' })
+    const { data } = await supabase.auth.signInWithOAuth({
+      provider: 'facebook',
+      options: {
+        redirectTo: 'http://localhost:3000/dashboard/',
+        skipBrowserRedirect: false,
+      },
+    })
+    // eslint-disable-next-line no-console
+    console.log(data)
   }
   catch (error) {
     notifyStore.notify(error, NotificationType.Error)
@@ -37,14 +43,18 @@ async function handleFacebookSignin() {
   finally {
     loading.value = false
   }
-  // eslint-disable-next-line no-console
-  console.log('handleFacebookSignins22323sss')
 }
 
 async function handleGoogleSignin() {
   try {
     loading.value = true
-    await supabase.auth.signInWithOAuth({ provider: 'google' })
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: 'http://localhost:3000/dashboard/',
+        skipBrowserRedirect: false,
+      },
+    })
   }
   catch (error) {
     notifyStore.notify(error, NotificationType.Error)
@@ -57,10 +67,8 @@ async function handleGoogleSignin() {
 }
 
 watchEffect(async () => {
-  if (user.value) {
+  if (user.value)
     await accountStore.init()
-    navigateTo('/dashboard', { replace: true })
-  }
 })
 </script>
 
